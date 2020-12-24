@@ -22,11 +22,13 @@ public class SpringbootdemoApplication {
 
     @GetMapping("/greet")
     public String hello(@RequestParam(value = "name", defaultValue = "World") String name, @RequestHeader(value = "User-Agent") String userAgent) {
+        log.info(userAgent);
         return String.format("Hi %s!", name);
     }
 
     @GetMapping("/")
     Properties properties() {
+
         return System.getProperties();
     }
 }
