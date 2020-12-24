@@ -10,12 +10,11 @@ public class Customer {
     @Id
     private String id;
     @Indexed(name = "custName")
-    private String name;
+    private String timestamp;
     private String description;
 
-    public Customer(String id, String name, String description) {
-        this.id = id;
-        this.name = name;
+    public Customer(String timestamp, String description) {
+        this.timestamp = timestamp;
         this.description = description;
     }
 
@@ -27,12 +26,12 @@ public class Customer {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTimestamp() {
+        return timestamp;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
     }
 
     public String getDescription() {
