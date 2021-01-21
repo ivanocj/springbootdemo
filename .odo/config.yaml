@@ -1,0 +1,12 @@
+kind: LocalConfig
+apiversion: odo.dev/v1alpha1
+ComponentSettings:
+  Type: wildfly:10.0
+  SourceLocation: https://github.com/ivanocj/springbootdemo
+  Ref: Exemplo de Projeto com Springboot e MongoDB
+  SourceType: git
+  Ports:
+  - 8080/TCP
+  Application: springbootdemo
+  Project: springboot-app
+  Name: springbootdemo
