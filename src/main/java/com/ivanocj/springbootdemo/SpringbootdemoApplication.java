@@ -27,8 +27,8 @@ public class SpringbootdemoApplication implements CommandLineRunner {
         SpringApplication.run(SpringbootdemoApplication.class, args);
     }
 
-    @GetMapping("/greet")
-    public String hello(@RequestParam(value = "name", defaultValue = "World") String name, @RequestHeader(value = "User-Agent") String userAgent) {
+    @GetMapping("/user")
+    public String hello(@RequestParam(value = "name", defaultValue = "User") String name, @RequestHeader(value = "User-Agent") String userAgent) {
         log.info(userAgent);
         repository.save(new Customer(String.format("%s", LocalTime.now()), userAgent));
         return String.format("Hi %s!", name);
@@ -41,7 +41,7 @@ public class SpringbootdemoApplication implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         repository.deleteAll();
     }
 }
